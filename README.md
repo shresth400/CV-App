@@ -14,7 +14,6 @@ A simple and intuitive React application for building and managing resumes. The 
 ## Technologies Used
 
 - **React**: A JavaScript library for building user interfaces.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
 - **Tailwind CSS**: A utility-first CSS framework for styling.
 - **React Router**: For handling routing within the application.
 - **PDF Generation Libraries**: For generating PDF resumes.
@@ -24,5 +23,5 @@ A simple and intuitive React application for building and managing resumes. The 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/react-resume-builder.git
+   git clone https://github.com/shresth400/react-resume-builder.git
    ```
