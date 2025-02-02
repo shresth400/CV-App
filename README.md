@@ -23,5 +23,5 @@ A simple and intuitive React application for building and managing resumes. The 
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/shresth400/react-resume-builder.git
+   git clone https://github.com/shresth400/CV-app
    ```
