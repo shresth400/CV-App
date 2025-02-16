@@ -47,7 +47,7 @@ const HomePage = () => {
 
 				{/* Main content section */}
 				<div className="flex flex-col h-screen overflow-scroll md:flex md:flex-row">
-					<div className="flex-1 w-96 p-10 h-3/5 order-2 overflow-y-scroll  border-2 border-t-primary-color md:border-none md:h-screen md:order-1">
+					<div className="flex-1 w-screen p-10 h-3/5 order-2 overflow-y-scroll  border-2 border-t-primary-color md:border-none md:h-screen md:w-96 md:order-1">
 						{/* Conditionally render the selected component */}
 						{selectedComponent === "personal" && <Personal />}
 						{selectedComponent === "education" && <Education />}

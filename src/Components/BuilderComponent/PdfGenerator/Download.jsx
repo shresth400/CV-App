@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import html2pdf from "html2pdf.js";
+// import html2pdf from "html2pdf.js";
+import html3pdf from "html3pdf"; // replacing html2pdf with html3pdf to remove es6-promise library warning
 import { useSelector } from "react-redux";
 
 // This is a functional component called 'Download'
@@ -19,7 +20,7 @@ const Download = ({ handleTemplateSelect }) => {
 		// These lines get references to the two HTML elements that represent the templates
 		const template1 = document.getElementById("template1");
 		const template2 = document.getElementById("template2");
-		const template3 = document.getElementById("template3")
+		// const template3 = document.getElementById("template3")
 
 		// This object contains the options for the PDF generation
 		const options = {
@@ -45,7 +46,7 @@ const Download = ({ handleTemplateSelect }) => {
 
 
 		// This line generates the PDF using the 'html2pdf' library and the specified options
-		html2pdf(selectedTemplate, options);
+		html3pdf(selectedTemplate, options);
 	};
 
 	return (
