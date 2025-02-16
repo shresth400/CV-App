@@ -40,9 +40,6 @@ export const Projects = () => {
 				dispatch(setProjectList(update));
 				return update;
 			});
-		} else {
-			// Display an alert if any of the required fields are missing
-			alert("No Project Details entered.");
 		}
 	};
 

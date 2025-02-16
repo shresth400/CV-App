@@ -54,7 +54,7 @@ export const Personal = () => {
 						/>
 					</div>
 
-					<div className="flex gap-2">
+					<div className="flex gap-2 cursor-pointer">
 						<label htmlFor="profile-pic" className="cursor-pointer">
 							<UploadIcon />
 						</label>
@@ -75,6 +75,8 @@ export const Personal = () => {
 				</div>
 
 				{/* Form fields for personal information */}
+				<div className="my-4">
+
 				<InputField
 					id="First Name"
 					name="first_name"
@@ -86,7 +88,7 @@ export const Personal = () => {
 					name="last_name"
 					label="Last Name"
 					placeholder="Last Name"
-				/>
+					/>
 				<InputField
 					id="Designation"
 					name="designation"
@@ -98,7 +100,7 @@ export const Personal = () => {
 					name="address"
 					label="Address"
 					placeholder="Address"
-				/>
+					/>
 				<InputField id="City" name="city" label="City" placeholder="City" />
 				<InputField
 					id="Email"
@@ -106,7 +108,7 @@ export const Personal = () => {
 					label="Email"
 					type="email"
 					placeholder="Email"
-				/>
+					/>
 				<InputField id="Phone" name="phone" label="Phone" placeholder="Phone" />
 
 				<div>
@@ -117,16 +119,20 @@ export const Personal = () => {
 				</div>
 
 				{/* Add Social Link Section */}
-				<div>
+				<div className="mt-4">
 					<p
 						onClick={toggleSocialLinkForm}
-						className="text-primary-color cursor-pointer hover:underline"
-					>
-						+ Add Social Link
+						className="text-primary-color cursor-pointer flex gap-2 align-middle items-center text-xl"
+						>
+						<span className="text-3xl">+</span> 
+						<span className="hover:underline ">
+						Add Social Link
+						</span>
 					</p>
 					{/* Conditionally render the SocialLink form */}
 					{showSocialLinkForm && <SocialLink />}
 				</div>
+						</div>
 			</div>
 		</>
 	);

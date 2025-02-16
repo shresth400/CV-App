@@ -19,6 +19,7 @@ const Download = ({ handleTemplateSelect }) => {
 		// These lines get references to the two HTML elements that represent the templates
 		const template1 = document.getElementById("template1");
 		const template2 = document.getElementById("template2");
+		const template3 = document.getElementById("template3")
 
 		// This object contains the options for the PDF generation
 		const options = {
@@ -33,8 +34,15 @@ const Download = ({ handleTemplateSelect }) => {
 			jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
 		};
 
-		// Select template based on the selected template state
-		let selectedTemplate = template === "template1" ? template1 : template2;
+		let selectedTemplate = ""
+
+		if (template === "template1") {
+			selectedTemplate = template1
+		}
+		if (template === "template2") {
+			selectedTemplate = template2
+		}
+
 
 		// This line generates the PDF using the 'html2pdf' library and the specified options
 		html2pdf(selectedTemplate, options);
@@ -43,24 +51,29 @@ const Download = ({ handleTemplateSelect }) => {
 	return (
 		<div>
 			{/* This section displays two clickable elements that allow the user to select a template */}
-			<div className="flex flex-wrap justify-between">
+			<div className="w-40">
 				<div
 					onClick={() => {
 						handleTemplateSelect("template1");
 						setTemplate("template1");
 					}}
-					className="p-4 bg-slate-300 cursor-pointer"
+					className="p-4 cursor-pointer w-auto"
 				>
-					Template 1
+						<img
+							src={`${process.env.PUBLIC_URL}/Dummy/template1.png`}
+							alt=" "
+							className="w-40 h-40"
+						/>
 				</div>
+
 				<div
 					onClick={() => {
 						handleTemplateSelect("template2");
 						setTemplate("template2");
 					}}
-					className="p-4 bg-slate-300 cursor-pointer"
+					className="p-4 cursor-pointer"
 				>
-					Template 2
+						<img src={`${process.env.PUBLIC_URL}/Dummy/template2.png`} alt=" " className="w-40 h-40"/>
 				</div>
 			</div>
 

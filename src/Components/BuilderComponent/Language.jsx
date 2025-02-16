@@ -59,7 +59,7 @@ export const Languages = () => {
 				<select
 					value={rating}
 					onChange={handleRatingChange}
-					className="border-2 border-gray-300 rounded-lg p-2 text-xl w-60 mb-2"
+					className="border-2 border-gray-300 rounded-lg py-2 px-2 text-xl w-60 mb-2"
 				>
 					<option value="Beginner">Beginner </option>
 					<option value="Intermediate">Intermediate </option>
@@ -70,7 +70,7 @@ export const Languages = () => {
 
 				<button
 					onClick={handleAdd}
-					className="bg-primary-color text-white px-6 py-2 mt-4 rounded-md hover:bg-secondary-color transition-all"
+					className="ms-4 bg-primary-color text-white px-6 py-2 mt-4 rounded-md hover:bg-secondary-color transition-all"
 				>
 					Add Language
 				</button>

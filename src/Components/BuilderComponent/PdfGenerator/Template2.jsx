@@ -18,7 +18,7 @@ const Template1 = () => {
 	const skill = useSelector((state) => state.inputFields.skill);
 	const url = useSelector((state) => state.inputFields.url);
 
-    
+
 	// This is the main return statement of the functional component
 	return (
 		<>
@@ -78,6 +78,22 @@ const Template1 = () => {
 												<p
 													dangerouslySetInnerHTML={{ __html: exp.Description }}
 												></p>
+											</li>
+										</React.Fragment>
+									))}
+								</ul>
+							</div>
+						)}
+						{skill.length > 0 && (
+							<div>
+								<p className="text-xl text-blue-400">SKILL</p>
+								<ul className="text-xs mb-4">
+									{skill.map((skill, index) => (
+										<React.Fragment key={index}>
+											<li>
+												{skill.Skill} - {skill.Rating <= 2 && "Good"}{" "}
+												{skill.Rating <= 4 && skill.Rating > 2 && "Excellent"}{" "}
+												{skill.Rating > 4 && "Expert"}
 											</li>
 										</React.Fragment>
 									))}
@@ -200,23 +216,6 @@ const Template1 = () => {
 														__html: training.Description,
 													}}
 												></p>
-											</li>
-										</React.Fragment>
-									))}
-								</ul>
-							</div>
-						)}
-
-						{skill.length > 0 && (
-							<div>
-								<p className="text-xl text-blue-400">SKILL</p>
-								<ul className="text-xs mb-4">
-									{skill.map((skill, index) => (
-										<React.Fragment key={index}>
-											<li>
-												{skill.Skill} - {skill.Rating <= 2 && "Good"}{" "}
-												{skill.Rating <= 4 && skill.Rating > 2 && "Excellent"}{" "}
-												{skill.Rating > 4 && "Expert"}
 											</li>
 										</React.Fragment>
 									))}

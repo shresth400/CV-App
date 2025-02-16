@@ -45,9 +45,6 @@ export const Education = () => {
 			setSchool("");
 			setDegree("");
 			setYear("");
-		} else {
-			// Display an alert if any of the required fields are missing
-			alert("No education details entered.");
 		}
 	};
 

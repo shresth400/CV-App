@@ -39,33 +39,37 @@ const HomePage = () => {
 			<div className="z-10">
 				<Header />
 			</div>
-			<div className="flex">
+			<div className="flex mx-auto">
 				{/* Sidebar section */}
-				<SideBar handleComponentSelect={handleComponentSelect} />
-
-				{/* Main content section */}
-				<div className="flex-1 p-10 h-screen overflow-y-scroll">
-					{/* Conditionally render the selected component */}
-					{selectedComponent === "personal" && <Personal />}
-					{selectedComponent === "education" && <Education />}
-					{selectedComponent === "experience" && <Experience />}
-					{selectedComponent === "projects" && <Projects />}
-					{selectedComponent === "skills" && <Skills />}
-					{selectedComponent === "achievements" && <Achievements />}
-					{selectedComponent === "training" && <Training />}
-					{selectedComponent === "awards" && <Awards />}
-					{selectedComponent === "references" && <References />}
-					{selectedComponent === "languages" && <Languages />}
-					{selectedComponent === "share" && (
-						<Download handleTemplateSelect={handleTemplateSelect} />
-					)}
+				<div>
+					<SideBar handleComponentSelect={handleComponentSelect} />
 				</div>
 
-				{/* PDF section */}
-				<div className="h-screen w-2/4 flex-shrink-0 overflow-y-scroll">
-					{/* Conditionally render the selected template */}
-					{selectedTemplate === "template1" && <Template1 />}
-					{selectedTemplate === "template2" && <Template2 />}
+				{/* Main content section */}
+				<div className="flex flex-col h-screen overflow-scroll md:flex md:flex-row">
+					<div className="flex-1 w-96 p-10 h-3/5 order-2 overflow-y-scroll  border-2 border-t-primary-color md:border-none md:h-screen md:order-1">
+						{/* Conditionally render the selected component */}
+						{selectedComponent === "personal" && <Personal />}
+						{selectedComponent === "education" && <Education />}
+						{selectedComponent === "experience" && <Experience />}
+						{selectedComponent === "projects" && <Projects />}
+						{selectedComponent === "skills" && <Skills />}
+						{selectedComponent === "achievements" && <Achievements />}
+						{selectedComponent === "training" && <Training />}
+						{selectedComponent === "awards" && <Awards />}
+						{selectedComponent === "references" && <References />}
+						{selectedComponent === "languages" && <Languages />}
+						{selectedComponent === "share" && (
+							<Download handleTemplateSelect={handleTemplateSelect} />
+						)}
+					</div>
+
+					{/* PDF section */}
+					<div className="flex-1 w-screen h-2/5 order-1 overflow-y-scroll md:h-screen md:order-2">
+						{/* Conditionally render the selected template */}
+						{selectedTemplate === "template1" && <Template1 />}
+						{selectedTemplate === "template2" && <Template2 />}
+					</div>
 				</div>
 			</div>
 		</>

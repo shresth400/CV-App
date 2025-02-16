@@ -18,10 +18,10 @@ export const References = () => {
 	// Create an object with the reference details from the input fields
 	const add = {
 		Name: info["Name"],
-		Company: info["Company"],
-		Designation: info["Reference Designation"],
-		Phone: info["Reference Phone"],
-		Email: info["Reference Email"],
+		Company: info["Reference_Company"],
+		Designation: info["Reference_Designation"],
+		Phone: info["Reference_Phone"],
+		Email: info["Reference_Email"],
 	};
 
 	// Use the useEffect hook to initialize the references state with the cached references
@@ -32,16 +32,13 @@ export const References = () => {
 	// Handle the addition of a new reference
 	const handleAdd = () => {
 		// Check if all required fields are filled
-		if (add.Name && add.Designation && add.Phone && add.Email) {
+		if (add.Name && add.Company && add.Designation && add.Phone && add.Email) {
 			// Update the references state and dispatch the updated list to the Redux store
 			setReferences((reference) => {
 				const update = [...reference, add];
 				dispatch(setReferenceList(update));
 				return update;
 			});
-		} else {
-			// Display an alert if any required field is missing
-			alert("No Reference details entered.");
 		}
 	};
 
@@ -67,6 +64,30 @@ export const References = () => {
 					label="Name"
 					placeholder="Name"
 				/>
+				<InputField
+					id="Reference_Company"
+					name="company_name"
+					label="Company"
+					placeholder="Company"
+				/>
+				<InputField
+					id="Reference_Designation"
+					name="designation"
+					label="Designation"
+					placeholder="Designation"
+				/>{" "}
+				<InputField
+					id="Reference_Phone"
+					name="phone"
+					label="Phone"
+					placeholder="Phone"
+				/>{" "}
+				<InputField
+					id="Reference_Email"
+					name="email"
+					label="Email"
+					placeholder="Email"
+				/>
 				{/* Render other input fields for reference details */}
 				<button
 					onClick={handleAdd}
@@ -83,6 +104,19 @@ export const References = () => {
 						<p>
 							<strong>Name: </strong> {ref.Name}
 						</p>
+						<p>
+							<strong>Company: </strong> {ref.Company}
+						</p>
+						<p>
+							<strong>Designation: </strong> {ref.Designation}
+						</p>
+						<p>
+							<strong>Phone: </strong> {ref.Phone}
+						</p>
+						<p>
+							<strong>Email: </strong> {ref.Email}
+						</p>
+
 						{/* Render other reference details */}
 						<button
 							onClick={() => handleRemove(index)}

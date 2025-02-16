@@ -32,11 +32,14 @@ const SocialLink = () => {
 
 	// Handle the click event for the "Add Link" button
 	const handleAddLink = () => {
-		setLinks((item) => {
-			const update = [...item, add];
-			dispatch(setSocial(update));
-			return update;
-		});
+		if (add.Platform && add.Link) {
+
+			setLinks((item) => {
+				const update = [...item, add];
+				dispatch(setSocial(update));
+				return update;
+			});
+		}
 	};
 
 	// Handle the click event for the "Delete" button

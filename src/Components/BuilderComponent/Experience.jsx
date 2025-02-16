@@ -40,9 +40,6 @@ export const Experience = () => {
 				dispatch(setExperienceList(update));
 				return update;
 			});
-		} else {
-			// Display an alert if the required fields are not filled
-			alert("No Experience details entered.");
 		}
 	};
 
@@ -76,7 +73,6 @@ export const Experience = () => {
 					label="Company Name"
 					placeholder="Enter the company name"
 				/>
-				<div className="flex gap-4">
 					<InputField
 						id="Start Date"
 						name="Started"
@@ -84,7 +80,6 @@ export const Experience = () => {
 						type="date"
 					/>
 					<InputField id="End date" name="Ended" label="End Date" type="date" />
-				</div>
 
 				{/* QuillEditor for Experience Description */}
 				<div className="mb-4">

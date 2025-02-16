@@ -33,7 +33,7 @@ export const Training = () => {
 	// Add a new training to the list
 	const handleAdd = () => {
 		// Check if the required fields (Training and Institute) are filled
-		if (add.Training && add.Institute) {
+		if (add.Training) {
 			// Update the trainings state and dispatch the updated list to the Redux store
 			setTrainings((training) => {
 				const update = [...training, add];
@@ -99,7 +99,10 @@ export const Training = () => {
 				{trainings.map((training, index) => (
 					<div key={index} className="bg-gray-100 p-4 rounded-lg mb-4">
 						<h3 className="text-xl font-bold">{training.Training}</h3>
-						<p className="text-gray-600">Institute: {training.Institute}</p>
+						{training.Institute &&
+
+							<p className="text-gray-600">Institute: {training.Institute}</p>
+						}
 						{training.Date && (
 							<p className="text-gray-600">
 								Date of Completion: {training.Date}
