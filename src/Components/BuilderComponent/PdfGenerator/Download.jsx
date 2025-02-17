@@ -35,15 +35,14 @@ const Download = ({ handleTemplateSelect }) => {
 			jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
 		};
 
-		let selectedTemplate = ""
+		let selectedTemplate = "";
 
 		if (template === "template1") {
-			selectedTemplate = template1
+			selectedTemplate = template1;
 		}
 		if (template === "template2") {
-			selectedTemplate = template2
+			selectedTemplate = template2;
 		}
-
 
 		// This line generates the PDF using the 'html2pdf' library and the specified options
 		html3pdf(selectedTemplate, options);
@@ -60,11 +59,11 @@ const Download = ({ handleTemplateSelect }) => {
 					}}
 					className="p-4 cursor-pointer w-auto"
 				>
-						<img
-							src={`${process.env.PUBLIC_URL}/Dummy/template1.png`}
-							alt=" "
-							className="w-40 h-40"
-						/>
+					<img
+						src={`${process.env.PUBLIC_URL}/Dummy/template1.png`}
+						alt=" "
+						className="w-40 h-40"
+					/>
 				</div>
 
 				<div
@@ -74,7 +73,11 @@ const Download = ({ handleTemplateSelect }) => {
 					}}
 					className="p-4 cursor-pointer"
 				>
-						<img src={`${process.env.PUBLIC_URL}/Dummy/template2.png`} alt=" " className="w-40 h-40"/>
+					<img
+						src={`${process.env.PUBLIC_URL}/Dummy/template2.png`}
+						alt=" "
+						className="w-40 h-40"
+					/>
 				</div>
 			</div>
 
